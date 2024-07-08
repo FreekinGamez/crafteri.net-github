@@ -1,0 +1,60 @@
+<html>
+<head>
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
+</head>
+<body>
+<pre>
+
+GOOD SITES:
+
+	Decryption: CyberChef
+
+
+UPDATES:
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt update
+sudo apt upgrade
+
+FIREWALL:
+Setup:
+	sudo apt-get ufw
+	sudo ufw allow ssh,20,21,22,220
+	sudo ufw enable
+	sudo ufw default deny incoming
+	sudo ufw defaut allow outgoing
+Logging:
+	sudo ufw logging on
+	sudo ufw logging high
+Status:
+	sudo ufw status verbose
+
+
+EDIT GROUPS:
+any linux:
+	sudo nano /etc/group
+ubuntu:
+	sudo gedit /etc/group	
+
+EDIT USERS:
+any linux:
+	sudo nano /etc/passwd
+	(remove unauthorized users)
+ubuntu:
+	sudo gedit /etc/passwd
+
+CHANGE PASSWORDS:
+	sudo passwd [username]
+	(then input new password ex.: " T5h!Ius3.3j " )
+
+REMOVE MEDIA:
+mp3, mp4, png, jpg, jpeg
+
+	find '*.mp3'
+	find '[filename]'
+	
+	Good find command explanation: https://opensource.com/article/18/4/how-use-find-linux
+
+</pre>
+</body>
+</html>
