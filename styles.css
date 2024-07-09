@@ -132,8 +132,8 @@ body {
 
 @media (max-width: 768px) {
     .header-section {
-        padding-top: 450px;
-        height: 130vh;
+        padding-top: 400px;
+        height: 140vh;
     }
 }
 
