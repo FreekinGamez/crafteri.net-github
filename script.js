@@ -32,4 +32,19 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         });
     });
+
+    // Toggle mobile menu
+    const burger = document.getElementById('burger');
+    const navMenu = document.getElementById('nav-menu');
+
+    burger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+        });
+    });
 });
