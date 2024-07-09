@@ -31,6 +31,7 @@ body {
     display: flex;
     margin: 0;
     padding: 0;
+    padding-right: 20px; /* Add padding to shift buttons to the left */
 }
 
 .nav-menu li {
@@ -45,7 +46,6 @@ body {
     padding: 10px 20px;
     transition: background-color 0.3s, transform 0.3s;
     border-radius: 5px;
-    width: 100%; /* Ensure the anchor takes full width */
     box-sizing: border-box; /* Include padding in the width calculation */
 }
 
@@ -152,15 +152,13 @@ body {
     .typing-animation {
         font-size: 3em;
         text-align: center;
-
     }
 }
 
 @media (max-width: 768px) {
     .slogan {
-        font-size: 1.5em !important;
+        font-size: 1.2em !important;
         text-align: center;
-
     }
 }
 
@@ -205,10 +203,10 @@ body {
 
 @media (min-width: 768px) {
     .info-box-header, .info-box-normal {
-        font-size: 20px; /* Adjust the font size as needed */
-        width: 90%; /* Adjust this percentage as needed for larger screens */
-        padding: 40px; /* Adjust the padding as needed for larger screens */
-                margin: 0 auto; /* Center the box */
+        font-size: 1em; /* Reset the font size */
+        width: 90%;
+        padding: 40px;
+        margin: 0 auto;
     }
 }
 
@@ -229,7 +227,7 @@ body {
     flex: 1;
     padding-left: 80px;
     max-width: 600px;
-    word-wrap: break-word; /* Ensure text wraps properly */
+    word-wrap: break-word;
 }
 
 .info-box-text h1 {
