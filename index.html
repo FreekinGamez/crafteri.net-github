@@ -1,75 +1,155 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Crafteri Home</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(45deg, #000000, #4B0082, #2F4F4F);
-            background-size: cover;
-            color: #fff;
-            text-align: center;
-            padding: 50px;
-            background-attachment: fixed; /*edit*/
-        }
-        h1 {
-            font-size: 3em;
-            margin-bottom: 50px;
-        }
-        .button {
-            display: inline-block;
-            padding: 30px 40px;
-            margin: 10px;
-            font-size: 1.5em;
-            text-align: center;
-            text-decoration: none;
-            color: #fff;
-            background: linear-gradient(45deg, #6D5BBA, #8D58BF);
-            border-radius: 4px;
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-            transition: background 0.5s, box-shadow 0.5s, transform 0.5s;
-            position: relative;
-            overflow: hidden;
-        }
-        .button:before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 120%;
-            height: 200%;
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: translate(-50%, -75%) rotate(45deg);
-            pointer-events: none;
-        }
-        .button:hover {
-            background: linear-gradient(45deg, #8D58BF, #6D5BBA);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.3);
-            transform: scale(1.05);
-        }
-        .footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 10;
-            background-color: #3f3e3e;
-            color: white;
-            text-align: center;
-            padding: 1px;
-
-        }
-    </style>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crafteri.net</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 </head>
-<body>
-    <h1>Welcome to Crafteri!</h1>
-    <a class="button" href="https://yenkism.crafteri.net">Yenkism</a>
-    <a class="button" href="https://crafteri.net/cyber">Cyber</a>
-    <a class="button" href="https://spells.crafteri.net">Harry Potter Spells</a>
-    <a class="button" href="https://crafteri.net/policecodes">Police Codes</a>
-    <div class="footer">
-        <p>&#169; Crafteri Inc.</p>
+<body id="home">
+    <header class="header-section">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#home"><img src="logo.png" alt="Crafteri.net Logo"></a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#yenkism">Yenkism</a></li>
+                <li><a href="#police-codes">Police Codes</a></li>
+                <li><a href="#harry-potter-spells">Harry Potter Spells</a></li>
+                <li><a href="#more-projects">More Projects</a></li>
+                <li><a href="#about-me">About Me</a></li>
+            </ul>
+        </nav>
+        <div class="header-content">
+            <h1 class="typing-animation">crafteri.net</h1>
+            <p>Transform your leads, elevate your success</p>
+        </div>
+        <div class="header-info">
+            <div class="info-box-header" id="yenkism">
+                <div class="info-box-image">
+                    <img src="yenkism-logo.webp" alt="Yenkism Image">
+                </div>
+                <div class="info-box-text">
+                    <h1>Yenkism</h1>
+                    <div class="info">
+                        <div class="left-info">
+                            <p>Yenkism is an ancient polytheistic religion recently revived by Crafteri Industries. Rediscovered in ancient texts, it emphasizes balance, unity, and the pursuit of knowledge. Worshiping multiple deities, Yenkism connects followers to a profound spiritual tradition dating back thousands of years.</p>
+                        </div>
+                        <div class="right-info">
+                            <p>Yenkism teaches maintaining a balance between opposing forces and encourages the pursuit of wisdom through meditation, rituals, and community service. The pantheon includes gods like Aean, the King of Gods, and other deities representing light, darkness, nature, and elements. By reviving Yenkism, Crafteri Industries aims to share its timeless wisdom and values with the modern world.</p>
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <button class="cta-button">View Online</button>
+                        <button class="cta-button">Download File</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="info-section" id="police-codes">
+        <div class="info-box-normal">
+            <div class="info-box-text">
+                <h1>Police Codes</h1>
+                <div class="info">
+                    <div class="left-info">
+                        <p>Discover the intricate world of Los Angeles law enforcement with our comprehensive guide to police codes. This sophisticated resource is designed for both enthusiasts and professionals, offering a detailed look into the codes used by the LAPD to communicate efficiently and maintain public safety.</p>
+                    </div>
+                    <div class="right-info">
+                        <p>Our website provides an easy-to-navigate directory of all police codes, complete with explanations and examples. From common codes for routine traffic stops to the more complex signals for emergency situations, you'll gain valuable insight into the language that keeps LA's streets secure. Perfect for anyone looking to deepen their understanding of police operations and protocols.</p>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button class="cta-button">View Online</button>
+                </div>
+            </div>
+            <div class="info-box-image">
+                <img src="policecodes-logo.webp" alt="Police Codes Image">
+            </div>
+        </div>
     </div>
+
+    <div class="info-section" id="harry-potter-spells">
+        <div class="info-box-normal">
+            <div class="info-box-image">
+                <img src="harrypotter-logo.webp" alt="Harry Potter Spells Image">
+            </div>
+            <div class="info-box-text">
+                <h1>Harry Potter Spells</h1>
+                <div class="info">
+                    <div class="left-info">
+                        <p>Explore the enchanting world of Harry Potter with our comprehensive spells list. This magical resource offers a detailed compilation of every spell from the Harry Potter universe, complete with their incantations and effects. Perfect for fans and aspiring wizards alike, this guide brings the magic of Hogwarts to your fingertips.</p>
+                    </div>
+                    <div class="right-info">
+                        <p>Our website provides an organized and easy-to-navigate directory of spells, from the simplest charms to the most powerful curses. Each entry includes the spell's name, pronunciation, and a thorough explanation of its purpose and effect. Whether you're looking to master the basics like "Lumos" or delve into advanced magic with "Expecto Patronum," our spells list is your ultimate guide to becoming a proficient spellcaster in the magical world of Harry Potter.</p>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button class="cta-button">View Online</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-section" id="coming-soon">
+        <div class="info-box-normal">
+            <div class="info-box-text">
+                <h1>Coming Soon</h1>
+                <div class="info">
+                    <div class="left-info">
+                        <p>Will release soon...</p>
+                    </div>
+                    <div class="right-info">
+                        <p>Maybe...</p>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button class="cta-button">View Online</button>
+                </div>
+            </div>
+            <div class="info-box-image">
+                <img src="comingsoon-logo.webp" alt="Coming Soon Image">
+            </div>
+        </div>
+    </div>
+
+    <div class="about-me" id="about-me">
+        <h2>About Me</h2>
+        <p>Hi, I'm Gregor Volny, a <span id="age"></span> year old.</p>
+    </div>
+
+    <div class="achievements">
+        <h2>Achievements</h2>
+    </div>
+
+    <footer>
+        <h2>Contact Me</h2>
+        <div class="contact-container">
+            <div class="contact-column">
+                <p>YouTube: <a href="#">[Your YouTube]</a></p>
+                <p>TikTok: <a href="#">[Your TikTok]</a></p>
+            </div>
+            <div class="contact-column">
+                <p>Discord: <span class="contact-info">[Your Discord Info]</span></p>
+                <p>Email: <a class="contact-info" href="mailto:[Your Email]">[Your Email]</a></p>
+            </div>
+            <div class="contact-column">
+                <p>Placeholder 1: <a href="#">[Placeholder 1]</a></p>
+                <p>Placeholder 2: <a href="#">[Placeholder 2]</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Crafteri Industries &copy; 2024</p>
+        </div>
+    </footer>
 </body>
 </html>
