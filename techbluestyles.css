@@ -3,12 +3,24 @@ body {
     font-family: "Rubik", sans-serif;
     margin: 0;
     padding: 0;
-    color: #ccc;
+    color: #e0e0e0;
     background-color: #121212;
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
+a {
+    color: #00bcd4;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #80deea;
+    text-decoration: underline;
+}
+
+/* Navbar Styles */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -19,11 +31,11 @@ body {
     width: 100%;
     top: 0;
     z-index: 100;
+    box-shadow: 0 0 10px rgba(0, 150, 200, 0.7);
 }
 
 .logo img {
     height: 50px;
-    margin-right: 20px;
 }
 
 .nav-menu {
@@ -31,7 +43,6 @@ body {
     display: flex;
     margin: 0;
     padding: 0;
-    padding-right: 20px; /* Add padding to shift buttons to the left */
 }
 
 .nav-menu li {
@@ -39,20 +50,18 @@ body {
 }
 
 .nav-menu a {
-    display: block; /* Make the anchor a block element */
+    display: block;
     text-decoration: none;
-    color: #f1c40f;
+    color: #00bcd4;
     font-size: 1.2em;
     padding: 10px 20px;
     transition: background-color 0.3s, transform 0.3s;
     border-radius: 5px;
-    box-sizing: border-box; /* Include padding in the width calculation */
 }
 
 .nav-menu a:hover {
     background-color: #2e2e2e;
     transform: scale(1.05);
-    border-radius: 15px;
 }
 
 .burger {
@@ -65,7 +74,7 @@ body {
 .burger div {
     width: 25px;
     height: 3px;
-    background-color: #f1c40f;
+    background-color: #00bcd4;
 }
 
 /* Responsive Navigation */
@@ -121,45 +130,33 @@ body {
 .header-section {
     text-align: center;
     color: #fff;
-    background: linear-gradient(180deg, #4A4A4A 0%, #1c1c1c 100%);
-    height: 110vh;
+    background: radial-gradient(circle, rgba(0, 150, 200, 0.5) 40%, rgba(18, 18, 18, 1) 100%);
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding-top: 200px;
-}
-
-@media (max-width: 768px) {
-    .header-section {
-        padding-top: 400px;
-        height: 140vh;
-    }
+    padding-bottom: 200px;
+    box-shadow: 0 0 20px rgba(0, 150, 200, 0.7);
 }
 
 .typing-animation {
     font-size: 4.5em;
     font-weight: bold;
-    color: #f1c40f;
+    color: #00bcd4;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 0.15em solid #f1c40f;
+    border-right: 0.15em solid #00bcd4;
     animation: typing 6.5s steps(15, end) infinite, blink-caret 0.75s step-end infinite;
     font-family: 'Roboto Mono', monospace;
+    text-shadow: 0 0 10px rgba(0, 150, 200, 0.7);
 }
 
-@media (max-width: 768px) {
-    .typing-animation {
-        font-size: 2.8em;
-        text-align: center;
-    }
-}
-
-@media (max-width: 768px) {
-    .slogan {
-        font-size: 1em !important;
-        text-align: center;
-    }
+.header-content p {
+    font-size: 1.5em;
+    color: #80deea;
+    margin: 20px 0;
 }
 
 .header-content {
@@ -170,85 +167,52 @@ body {
     text-align: center;
 }
 
-.header-content p {
-    font-size: 1.5em;
-    margin: 20px 0;
-    padding-bottom: 150px;
-}
-
-@media (max-width: 768px) {
-    .header-content {
-        padding-bottom: 0px
-    }
-}
-
 /* Info Sections */
 .header-info, .info-section, .about-me, .achievements {
     padding: 60px 20px;
 }
 
-.info-box-header {
+.info-box-header, .info-box-normal {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     background-color: rgba(28, 28, 28, 0.8);
     padding: 40px;
     border-radius: 10px;
-    margin-bottom: 200px;
+    margin-bottom: 60px;
     text-align: left;
-}
-
-.info-box-normal {
-    display: flex;
-    align-items: center;
-    background-color: rgba(28, 28, 28, 0.8);
-    padding: 40px;
-    border-radius: 10px;
-    margin-bottom: 0px;
-    text-align: left;
-}
-
-@media (min-width: 768px) {
-    .info-box-header, .info-box-normal {
-        font-size: 1em; /* Reset the font size */
-        width: 90%;
-        padding: 40px;
-        margin: 0 auto;
-    }
-}
-
-.info-box-header .info-box-image {
-    order: -1;
+    box-shadow: 0 0 20px rgba(0, 150, 200, 0.7);
 }
 
 .info-box-image {
-    max-width: 33%;
+    flex: 1;
+    margin-right: 20px;
 }
 
 .info-box-image img {
     max-width: 100%;
     border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 150, 200, 0.7);
 }
 
 .info-box-text {
-    flex: 1;
-    padding-left: 80px;
-    max-width: 600px;
-    word-wrap: break-word;
+    flex: 2;
 }
 
 .info-box-text h1 {
-    color: #f1c40f;
-    font-size: 3em;
+    color: #00bcd4;
+    font-size: 2em;
+    text-shadow: 0 0 10px rgba(0, 150, 200, 0.7);
 }
 
 .info-box-text h3 {
-    color: #ebebeb;
+    color: #80deea;
     font-size: 1.5em;
 }
 
 .info-box-text p {
-    color: #ebebeb;
-    font-size: 1.2em;
+    color: #b0bec5;
+    font-size: 1em;
+    line-height: 1.6;
 }
 
 .button-container {
@@ -258,33 +222,21 @@ body {
 }
 
 .cta-button {
-    background-color: #f1c40f;
+    background-color: #00bcd4;
     border: none;
-    color: #1c1c1c;
+    color: #121212;
     padding: 10px 20px;
     font-size: 1.2em;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
     border-radius: 5px;
     text-decoration: none;
+    box-shadow: 0 0 10px rgba(0, 150, 200, 0.7);
 }
 
 .cta-button:hover {
-    background-color: #d4a60c;
+    background-color: #80deea;
     transform: scale(1.1);
-}
-
-/* About Me and Achievements */
-.about-me, .achievements {
-    background-color: #1e1e1e;
-    color: #ffffff;
-    text-align: center;
-    border-radius: 10px;
-}
-
-.about-me h2, .achievements h2 {
-    color: #f3f3f3;
-    font-size: 2.5em;
 }
 
 /* Footer */
@@ -293,6 +245,7 @@ footer {
     color: #cccccc;
     text-align: center;
     padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 150, 200, 0.7);
 }
 
 footer h2 {
@@ -313,8 +266,7 @@ footer h2 {
 }
 
 footer a, .contact-info {
-    color: #f1c40f;
-    text-decoration: none;
+    color: #00bcd4;
 }
 
 .footer-bottom {
@@ -323,6 +275,7 @@ footer a, .contact-info {
     margin-top: 20px;
 }
 
+/* Animations */
 @keyframes typing {
     0%, 10% { width: 0; }
     10%, 90% { width: 12.5ch; }
@@ -331,5 +284,5 @@ footer a, .contact-info {
 
 @keyframes blink-caret {
     from, to { border-color: transparent; }
-    50% { border-color: #f1c40f; }
+    50% { border-color: #00bcd4; }
 }
