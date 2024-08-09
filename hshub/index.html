@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hyperspace Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+</head>
+<body>
+    <div class="stars"></div>
+    
+    <!-- Hamburger Icon -->
+    <div class="hamburger" onclick="toggleMenu()">
+        &#9776;
+    </div>
+
+    <!-- Navbar for PC -->
+    <div class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#movies">Movies</a></li>
+            <li><a href="#books">Books</a></li>
+            <li><a href="#games">Games</a></li>
+            <li><a href="#aliensounds">Alien Sounds</a></li>
+            <li><a href="#about">About Us</a></li>
+        </ul>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+            <li><a href="#movies" onclick="toggleMenu()">Movies</a></li>
+            <li><a href="#books" onclick="toggleMenu()">Books</a></li>
+            <li><a href="#games" onclick="toggleMenu()">Games</a></li>
+            <li><a href="#aliensounds" onclick="toggleMenu()">Alien Sounds</a></li>
+            <li><a href="#about" onclick="toggleMenu()">About Us</a></li>
+        </ul>
+    </div>
+
+    <div class="header">
+        <h1 class="desktop-title">Welcome to the Hyperspace Hub</h1>
+        <h1 class="mobile-title">The Hyperspace Hub</h1>
+    </div>
+
+    <div class="content-section" id="home">
+        <div class="content-box">
+            <img src="movies.webp" alt="Movies" id="movies"> <!-- Replace with the actual image path -->
+            <div class="separator"></div>
+            <div class="section-title">Movies</div>
+        </div>
+
+        <div class="content-box">
+            <img src="books.webp" alt="Books" id="books"> <!-- Replace with the actual image path -->
+            <div class="separator"></div>
+            <div class="section-title">Books</div>
+        </div>
+
+        <div class="content-box">
+            <img src="games.webp" alt="Games" id="games"> <!-- Replace with the actual image path -->
+            <div class="separator"></div>
+            <div class="section-title">Games</div>
+        </div>
+
+        <div class="content-box">
+            <img src="aliensounds.webp" alt="Alien Sounds" id="aliensounds"> <!-- Replace with the actual image path -->
+            <div class="separator"></div>
+            <div class="section-title">Alien Sounds</div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('open');
+        }
+
+        // Smooth scrolling for taskbar links
+        document.querySelectorAll('.navbar a, .mobile-menu a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

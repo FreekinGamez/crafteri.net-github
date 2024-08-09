@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperspace Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #fff;
+    background-image: url('stars-background.jpg');
+    background-size: cover;
+    background-position: center; /* Center the background image */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    
+    
+}
+
+.header {
+    background-image: url('hyperspace-background.png');
+    background-size: cover;
+    background-position: center; /* Center the background image */
+    width: 100%;
+    padding: 120px 0; /* Increased padding for a bigger header */
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 3em; /* Increased font size for the header title */
+    text-shadow: 2px 2px 4px #000;
+}
+
+.sections {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 20px; /* space between sections */
+    width: calc(100% - 40px); /* Ensures the sections take the full width of the container with padding */
+    max-width: 1200px; /* Ensures the sections don't stretch too wide on large screens */
+    margin-top: 20px; /* Added margin to create space between header and sections */
+    padding: 0 20px; /* Added padding to create space between sections and the edges of the screen */
+}
+
+@media (min-width: 600px) {
+    .sections {
+        grid-template-columns: 1fr 1fr; /* 2 columns for screens wider than 600px */
+        padding: 0 40px; /* Additional padding for larger screens */
+    }
+}
+
+.section {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 40px; /* Increased padding for larger sections */
+    height: 250px; /* Increased height for larger sections */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.section:hover {
+    transform: translateY(-10px);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.footer {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+
+</style>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Welcome to the Hyperspace Hub</h1>
+        </header>
+        <div class="sections">
+            <div class="section" id="alien-sounds">
+                <h2>Listen to Alien Sounds</h2>
+            </div>
+            <div class="section" id="watch-movies">
+                <h2>Watch Movies</h2>
+            </div>
+            <div class="section" id="spread-wings">
+                <h2>Spread our Wings</h2>
+                <p>Expand this portal so it can be in your every flight.</p>
+            </div>
+            <div class="section" id="read-books">
+                <h2>Read Books</h2>
+            </div>
+            <div class="section" id="catch-news">
+                <h2>Catch up on the News</h2>
+            </div>
+            <div class="section" id="chat-people">
+                <h2>Chat with People</h2>
+            </div>
+        </div>
+        <footer class="footer">
+            <p>&copy; 2024 Hyperspace Hub</p>
+            <p>Contact us: hugo@volp.sh, gregor@vory.sh</p>
+            <p>Need help? Why don't you?</p>
+        </footer>
+    </div>
+</body>
+
+</html>
