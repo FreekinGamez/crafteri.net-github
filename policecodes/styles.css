@@ -1,0 +1,143 @@
+/* Base Styles for Police Codes */
+body {
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #ccc;
+    background-color: #121212; /* Darker background matching the main site's style */
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1c1c1c;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.navbar-title {
+    font-size: 1.5em;
+    color: #f1c40f;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    margin-left: 20px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #f1c40f;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 5px;
+}
+
+.nav-menu a:hover {
+    background-color: #2e2e2e;
+    transform: scale(1.05);
+}
+
+/* Content Section Styles */
+.info-section {
+    margin-top: 80px; /* Space between navbar and content */
+    padding: 20px;
+}
+
+/* Box Styles Matching the Main Site */
+.codes-box {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    background-color: rgba(28, 28, 28, 0.8); /* Matching main site's box color */
+    padding: 40px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: adding subtle shadow for depth */
+}
+
+/* Table Styling - Smaller size */
+.codes-box table {
+    width: 65%;
+    margin-bottom: 15px;
+    font-size: 0.7em; /* Smaller font size for table */
+}
+
+.codes-box th, .codes-box td {
+    padding: 3px; /* Reduced padding */
+    text-align: left;
+}
+
+/* Header and Paragraph Styling */
+.codes-box h1, .codes-box h2 {
+    color: #f1c40f; /* Title color consistent with main site */
+    font-size: 2.2em; /* Slightly reduced title size */
+}
+
+.codes-box p {
+    color: #ebebeb;
+    font-size: 1.2em; /* Reverted font size back to original */
+    margin-bottom: 1.5px; /* Smaller spacing between lines */
+    line-height: 1.1; /* Tighter line-height for compact look */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #2c2c2c;
+    color: #cccccc;
+    text-align: center;
+    padding: 20px;
+}
+
+footer h2 {
+    font-size: 2em;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    flex-wrap: wrap;
+}
+
+.contact-column {
+    flex: 1;
+    margin: 10px 20px;
+    min-width: 200px;
+}
+
+footer a, .contact-info {
+    color: #f1c40f;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    padding: 10px 0;
+    border-top: 1px solid #444;
+    margin-top: 20px;
+}
