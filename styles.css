@@ -185,7 +185,9 @@ body {
 /* Info Sections */
 .header-info, .info-section, .about-me, .achievements {
     padding: 60px 20px;
+    position: relative; /* Ensure proper positioning for the "New" tag */
 }
+
 
 .info-box-header {
     display: flex;
@@ -197,6 +199,21 @@ body {
     text-align: left;
 }
 
+.new-tag {
+    display: inline-block;
+    background-color: #f1c40f;
+    color: #1c1c1c;
+    font-weight: bold;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: -20px; /* Adjust as needed to position above the header box */
+    left: 20px; /* Adjust to position horizontally */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+    
 .info-box-normal {
     display: flex;
     align-items: center;
@@ -234,6 +251,7 @@ body {
     padding-left: 80px;
     max-width: 600px;
     word-wrap: break-word;
+    margin-top: 10px; /* Adjust if needed to avoid overlap */
 }
 
 .info-box-text h1 {
@@ -323,6 +341,22 @@ footer a, .contact-info {
     margin-top: 20px;
 }
 
+.new-stylish-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff0202, #e67e22);
+    color: #fff;
+    font-weight: bold;
+    font-size: 1em;
+    text-transform: uppercase;
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    animation: pulse 1.5s infinite;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
 @keyframes typing {
     0%, 10% { width: 0; }
     10%, 90% { width: 12.5ch; }
@@ -332,4 +366,15 @@ footer a, .contact-info {
 @keyframes blink-caret {
     from, to { border-color: transparent; }
     50% { border-color: #f1c40f; }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.9;
+    }
 }
