@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Crafteri Calculator</title>
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
+=======
+    <title>Document</title>
+>>>>>>> e7013d1b066b8dd35fcbd5a6dd2c9e50c9f3836d
 </head>
 
 <style>
