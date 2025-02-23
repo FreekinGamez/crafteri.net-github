@@ -224,6 +224,10 @@ body {
     text-align: left;
 }
 
+#calculator .info-box-normal {
+    padding-bottom: 150px; /* Adjust this value to increase/decrease the padding */
+}
+
 @media (min-width: 768px) {
     .info-box-header, .info-box-normal {
         font-size: 1em; /* Reset the font size */
