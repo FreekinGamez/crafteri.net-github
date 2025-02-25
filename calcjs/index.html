@@ -5,112 +5,216 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crafteri Calculator</title>
     <link rel="icon" href="../favicon.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <style>
+        :root {
+            --primary-color: #6a1b9a;
+            --secondary-color: #ffd700;
+            --background-color: #f5f5f5;
+            --button-color: #ffffff;
+            --button-hover: #e9ecef;
+            --text-color: #333333;
+        }
+
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-            background-color: #f0f0f0;
+            background-color: var(--background-color);
+        }
+
+        .header {
+            display: flex;
+            justify-content: flex-start;  /* Changed from space-between */
             align-items: center;
+            padding: 0.8rem 2rem;  /* Adjusted padding */
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            height: 40px;  /* Slightly reduced size */
+            width: auto;
+            padding: 4px 0;  /* Added padding top/bottom */
+        }
+
+        .title-section {
+            text-align: center;
+            padding: 2rem 1rem;
         }
 
         h1 {
-            font-size: 50px;
-            color: #333;
-            text-align: center;
-            margin-bottom: 50px;
+            color: var(--primary-color);
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .slogan {
+            color: var(--text-color);
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+            font-weight: 300;
+        }
+
+        .calc-container {
+            max-width: 100%;
+            width: 432px;  /* Increased from 360px (360 * 1.2) */
+            margin: 0 auto;
+            padding: 1rem;
         }
 
         .calc-display {
-            width: 450px;
-            height: 70px;
-            font-size: 35px;
+            width: calc(100% - 2rem);  /* Adjusted width to account for padding */
+            height: 80px;  /* Increased from 80px */
+            font-size: 2.4rem;  /* Increased from 2rem */
             text-align: right;
-            padding: 10px;
-            margin-bottom: 20px;
+            padding: 1rem;
+            margin-bottom: 1.2rem;  /* Increased from 1rem */
             border: none;
-            border-radius: 5px;
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 14px;  /* Slightly increased for proportion */
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
         }
 
         .calc-main {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(5, 1fr);  /* Added explicit rows */
+            gap: 1rem;  /* Increased from 0.8rem */
+            background-color: white;
+            padding: 1.4rem;  /* Increased from 1.2rem */
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         .calc-button {
-            width: 100px;
-            height: 100px;
-            margin: 10px;
-            font-size: 30px;
+            width: 100%;  /* Added width */
+            height: 72px;  /* Increased from 60px */
+            font-size: 1.8rem;  /* Increased from 1.5rem */
             border: none;
-            border-radius: 10px;
-            background-color: #f8f9fa;
+            border-radius: 14px;
+            background-color: var(--button-color);
             cursor: pointer;
-            transition: background-color 0.2s;
+            transition: all 0.2s ease;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            aspect-ratio: auto;  /* Remove aspect-ratio */
         }
 
         .calc-button:hover {
-            background-color: #e9ecef;
+            background-color: var(--button-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
-        footer {
+        .calc-button[id="Enter"] {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .calc-button[id="C"] {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .footer {
             margin-top: auto;
-            padding: 20px;
+            background-color: white;
+            border-top: 1px solid #eee;
+            padding: 1rem;
             text-align: center;
-            color: #666;
-            font-size: 20px;
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+
+        /* Material Icons styling */
+        .material-icons {
+            font-size: 1.8rem;  /* Increased from 1.5rem */
+            vertical-align: middle;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 480px) {
+            .calc-container {
+                width: 100%;
+                padding: 0.5rem;
+            }
+
+            .calc-button {
+                font-size: 1.44rem;  /* Increased from 1.2rem */
+            }
+
+            .calc-display {
+                font-size: 1.8rem;  /* Increased from 1.5rem */
+                height: 72px;  /* Increased from 60px */
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    
+    <div class="header">
+        <img src="../logo.png" alt="Crafteri Logo" class="logo" onclick="location.href='../index.html'">
+    </div>
 
+    <div class="title-section">
+        <h1>Calculator App</h1>
+        <p class="slogan">Simple. Powerful. Crafteri.</p>
+    </div>
 
-<h1>Calculator App</h1>
+    <div class="calc-container">
+        <input type="text" id="displayBox" readonly value="0" class="calc-display"> 
 
-<input type="text" id="displayBox" readonly value="0" class="calc-display"> 
+        <div class='calc-main'>
+            <!-- Row 1 -->
+            <button class="calc-button" id="7" onclick="addNum('7'); updateDisplay();" accesskey="7">7</button>
+            <button class="calc-button" id="8" onclick="addNum('8'); updateDisplay();" accesskey="8">8</button>
+            <button class="calc-button" id="9" onclick="addNum('9'); updateDisplay();" accesskey="9">9</button>
+            <button class="calc-button" id="*" onclick="addOperator('*'); updateDisplay();" accesskey="*">×</button>
 
-<div class='calc-main'>
-    <button class="calc-button" id="7" onclick="addNum('7'); updateDisplay();" accesskey="7">7</button>
-    <button class="calc-button" id="8" onclick="addNum('8'); updateDisplay();" accesskey="8">8</button>
-    <button class="calc-button" id="9" onclick="addNum('9'); updateDisplay();" accesskey="9">9</button>
-    <button class="calc-button" id="*" onclick="addOperator('*'); updateDisplay();" accesskey="*">*</button>
+            <!-- Row 2 -->
+            <button class="calc-button" id="4" onclick="addNum('4'); updateDisplay();" accesskey="4">4</button>
+            <button class="calc-button" id="5" onclick="addNum('5'); updateDisplay();" accesskey="5">5</button>
+            <button class="calc-button" id="6" onclick="addNum('6'); updateDisplay();" accesskey="6">6</button>
+            <button class="calc-button" id="/" onclick="addOperator('/'); updateDisplay();" accesskey="/">÷</button>
 
-    <br>
-    <button class="calc-button" id="4" onclick="addNum('4'); updateDisplay();" accesskey="4">4</button>
-    <button class="calc-button" id="5" onclick="addNum('5'); updateDisplay();" accesskey="5">5</button>
-    <button class="calc-button" id="6" onclick="addNum('6'); updateDisplay();" accesskey="6">6</button>
-    <button class="calc-button" id="/" onclick="addOperator('/'); updateDisplay();" accesskey="/">/</button>
+            <!-- Row 3 -->
+            <button class="calc-button" id="1" onclick="addNum('1'); updateDisplay();" accesskey="1">1</button>
+            <button class="calc-button" id="2" onclick="addNum('2'); updateDisplay();" accesskey="2">2</button>
+            <button class="calc-button" id="3" onclick="addNum('3'); updateDisplay();" accesskey="3">3</button>
+            <button class="calc-button" id="+" onclick="addOperator('+'); updateDisplay();" accesskey="+">+</button>
 
-    <br>
-    <button class="calc-button" id="1" onclick="addNum('1'); updateDisplay();" accesskey="1">1</button>
-    <button class="calc-button" id="2" onclick="addNum('2'); updateDisplay();" accesskey="2">2</button>
-    <button class="calc-button" id="3" onclick="addNum('3'); updateDisplay();" accesskey="3">3</button>
-    <button class="calc-button" id="+" onclick="addOperator('+'); updateDisplay();" accesskey="+">+</button>
-    <br>
-    <button class="calc-button" id="C" onclick="clearAll(); updateDisplay();" accesskey="C">C</button>
-    <button class="calc-button" id="0" onclick="addNum('0'); updateDisplay();" accesskey="0">0</button>
-    <button class="calc-button" id="-" onclick="addOperator('-'); updateDisplay();" accesskey="-">-</button>
-    <button class="calc-button" id="Enter" onclick="eaquals(); updateDisplay();" accesskey="=">=</button>
+            <!-- Row 4 -->
+            <button class="calc-button" id="C" onclick="clearAll(); updateDisplay();" accesskey="C">C</button>
+            <button class="calc-button" id="0" onclick="addNum('0'); updateDisplay();" accesskey="0">0</button>
+            <button class="calc-button" id="-" onclick="addOperator('-'); updateDisplay();" accesskey="-">−</button>
+            <button class="calc-button" id="Enter" onclick="eaquals(); updateDisplay();" accesskey="=">=</button>
 
-</div>
+            <!-- Row 5 -->
+            <button class="calc-button" id="Delete" onclick="del(); updateDisplay();" accesskey="=">
+                <span class="material-icons">backspace</span>
+            </button>
+        </div>
+    </div>
 
-
-
-
+    <footer class="footer">
+        Crafteri Industries © 2025 All Rights Reserved
+    </footer>
 </body>
-<footer>Crafteri Industries © 2025 All Rights Reserved</footer>
-</html>
-
-
 <script>
 let currentNum = '0';
 let equation = [];
@@ -125,9 +229,12 @@ function addNum(num){
 };
 
 function addOperator(operator){
-    equation.push(currentNum);
+
+    if (currentNum != '0') {
+        equation.push(currentNum);
+        currentNum = '0';
+    };
     equation.push(operator);
-    currentNum = '0';
 }
 
 function clearAll(){
@@ -136,7 +243,8 @@ function clearAll(){
 }
 
 function eaquals(){
-    currentNum = calculate(equation);
+    currentNum = calculate(equation).toString();
+    equation = [];
     if (isNaN(currentNum)) {
         currentNum = '0';
         console.log('Error: Invalid Syntax');
@@ -145,8 +253,6 @@ function eaquals(){
 
 
 function calculate(array){
-
-    equation = [];
     if (currentNum != '0') {
         array.push(currentNum);
         currentNum = '0'; 
@@ -156,24 +262,34 @@ function calculate(array){
         return Number(array[0]);
     };
 
-    for (i = 0; i < array.length-1; i++) {
-        if (array[i] == '*') {
-            return calculate(array.slice(0, i)) * calculate(array.slice(i+1));
+        for (let i = 0; i < array.length; i++) {
+        if (array[i] == '+') {
+            let left = calculate(array.slice(0, i));
+            let right = calculate(array.slice(i+1));
+            return left + right;
         }
-        if (array[i] == '/') {
-            return calculate(array.slice(0, i)) / calculate(array.slice(i+1));
+        if (array[i] == '-') {
+            let left = calculate(array.slice(0, i));
+            let right = calculate(array.slice(i+1));
+            return left - right;
         }
     }
 
-    for (i = 0; i < array.length; i++) {
-        if (array[i] == '+') {
-            return calculate(array.slice(0, i)) + calculate(array.slice(i+1));
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] == '*') {
+            let left = calculate(array.slice(0, i));
+            let right = calculate(array.slice(i+1));
+            return left * right;
         }
-        if (array[i] == '-') {
-            return calculate(array.slice(0, i)) - calculate(array.slice(i+1));
+        if (array[i] == '/') {
+            let left = calculate(array.slice(0, i));
+            let right = calculate(array.slice(i+1));
+            return left / right;
         }
-    };
+    }
     
+
+
 }
 
 
@@ -204,10 +320,35 @@ function updateDisplay(){
     document.getElementById('displayBox').value = display;
 }
 
+function del(){
+    
+    if (currentNum != '0') {
+        if (currentNum.length > 1) {
+            currentNum = currentNum.slice(0, -1);
+            return;
+    }else{
+        currentNum = '0';
+        return;
+    };
 
+} 
+    if (equation.length != 0) {
+        console.log("Before pop:", equation);
+        if (equation[equation.length - 1].length > 1) {
+
+        equation[equation.length - 1] = equation[equation.length - 1].slice(0, -1);
+        return;
+
+    }else{
+        equation.pop();
+        return;
+    }console.log("After pop:", equation);
+}
+}
 
 
 
 
 
 </script>
+</html>
