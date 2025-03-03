@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Crafteri Currency Flipper</title>
     
     <!-- Regular favicon for browser tabs -->
     <link rel="icon" href="../favicon.png" type="image/png">
     
     <!-- App icons for iOS and Android home screens -->
-    <link rel="apple-touch-icon" href="../app-icon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="../app-icon.png">
-    
-    <!-- Web app capability meta tags -->
+    <link rel="apple-touch-icon" href="../favicon.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Currency Flipper">
+    
+    <!-- Android specific -->
+    <link rel="manifest" href="../manifest.json">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Currency Flipper">
     <meta name="theme-color" content="#6a1b9a">
@@ -52,10 +52,13 @@
             padding: 0.8rem 2rem;
             background-color: white;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            width: 100%;
+            box-sizing: border-box;
+            min-height: 60px; /* Ensure minimum height for the header */
         }
 
         .logo {
-            height: 40px;
+            height: 48px; /* Increased from 40px */
             width: auto;
             padding: 4px 0;
             cursor: pointer;
@@ -82,14 +85,14 @@
 
         .converter-container {
             max-width: 100%;
-            width: 500px;
+            width: 520px; /* Increased from 500px */
             margin: 0 auto;
             padding: 1rem;
         }
 
         .converter-main {
             background-color: white;
-            padding: 1.4rem;
+            padding: 1.8rem; /* Increased from 1.4rem */
             border-radius: 14px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
@@ -104,20 +107,20 @@
         .input-group {
             display: flex;
             align-items: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem; /* Increased from 1.5rem */
         }
 
         .input-group label {
             font-weight: 500;
-            font-size: 1.2rem;
+            font-size: 1.3rem; /* Increased from 1.2rem */
             margin-right: 1rem;
             min-width: 150px;
         }
 
         .input-field {
             width: 100%;
-            height: 50px;
-            font-size: 1.5rem;
+            height: 60px; /* Increased from 50px */
+            font-size: 1.6rem; /* Increased from 1.5rem */
             text-align: center;
             padding: 0.5rem;
             border: 2px solid #ddd;
@@ -136,8 +139,8 @@
 
         .result-field {
             width: 100%;
-            height: 50px;
-            font-size: 1.5rem;
+            height: 60px; /* Increased from 50px */
+            font-size: 1.6rem; /* Increased from 1.5rem */
             text-align: center;
             padding: 0.5rem;
             border: 2px solid #ddd;
@@ -163,16 +166,25 @@
             .converter-container {
                 width: 100%;
                 padding: 0.5rem;
+                box-sizing: border-box;
             }
 
             .input-group {
                 flex-direction: column;
                 align-items: flex-start;
+                width: 100%;
             }
 
             .input-group label {
                 margin-bottom: 0.5rem;
                 margin-right: 0;
+                width: 100%;
+            }
+
+            .input-field, .result-field {
+                width: 100%;
+                box-sizing: border-box;
+                font-size: 1.5rem; /* Ensure font size is maintained on mobile */
             }
 
             h1 {
@@ -182,6 +194,25 @@
             .rate-label {
                 font-size: 1rem;
             }
+
+            body {
+                overflow-x: hidden; /* Prevent horizontal scrolling */
+                width: 100%;
+            }
+
+            .header {
+                width: 100%;
+                padding: 0.8rem 1rem; /* Slightly reduced padding on mobile */
+            }
+
+            .converter-main {
+                padding: 1rem; /* Slightly reduced padding on mobile */
+            }
+        }
+        
+        /* Ensure all content uses border-box for consistent sizing */
+        * {
+            box-sizing: border-box;
         }
     </style>
 </head>
@@ -199,7 +230,7 @@
         <div class="converter-main">
             <div class="input-group">
                 <label>EUR → GBP Rate:</label>
-                <input type="number" id="exchangeRate" class="input-field" placeholder="0.85" step="0.0001" min="0.0001" value="0.85" oninput="calculateInverseRate()">
+                <input type="number" id="exchangeRate" class="input-field" placeholder="0.85" step="0.0001" min="0.0001" oninput="calculateInverseRate()">
             </div>
 
             <div class="input-group">
@@ -216,7 +247,8 @@
     <script>
         // Calculate inverse rate when page loads
         window.onload = function() {
-            calculateInverseRate();
+            // Show "Invalid Rate" when the page first loads
+            document.getElementById('inverseRate').value = "Invalid Rate";
         };
 
         function calculateInverseRate() {
