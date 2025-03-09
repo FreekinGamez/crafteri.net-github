@@ -6,10 +6,10 @@
     <title>Crafteri Currency Flipper</title>
     
     <!-- Regular favicon for browser tabs -->
-    <link rel="icon" href="../favicon.png" type="image/png">
+    <link rel="icon" href="../logos/favicon.png" type="image/png">
     
     <!-- App icons for iOS and Android home screens -->
-    <link rel="apple-touch-icon" href="../favicon.png">
+    <link rel="apple-touch-icon" href="../logos/favicon.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Currency Flipper">
     
@@ -218,7 +218,7 @@
 </head>
 <body>
     <div class="header">
-        <img src="../logo.png" alt="Crafteri Logo" class="logo" onclick="location.href='../index.html'">
+        <img src="../logos/logo.png" alt="Crafteri Logo" class="logo" onclick="location.href='../index.html'">
     </div>
 
     <div class="title-section">
@@ -230,12 +230,26 @@
         <div class="converter-main">
             <div class="input-group">
                 <label>EUR → GBP Rate:</label>
-                <input type="number" id="exchangeRate" class="input-field" placeholder="0.85" step="0.0001" min="0.0001" oninput="calculateInverseRate()">
+                <input type="number" id="exchangeRateGBP" class="input-field" value="0.85" placeholder="0.85" step="0.0001" min="0.0001" oninput="calculateInverseRateGBP()">
             </div>
 
             <div class="input-group">
                 <label>GBP → EUR Rate:</label>
-                <input type="text" id="inverseRate" class="result-field" readonly>
+                <input type="text" id="inverseRateGBP" class="result-field" readonly>
+            </div>
+        </div>
+    </div>
+
+    <div class="converter-container">
+        <div class="converter-main">
+            <div class="input-group">
+                <label>EUR → USD Rate:</label>
+                <input type="number" id="exchangeRateUSD" class="input-field" value="1.08" placeholder="1.08" step="0.0001" min="0.0001" oninput="calculateInverseRateUSD()">
+            </div>
+
+            <div class="input-group">
+                <label>USD → EUR Rate:</label>
+                <input type="text" id="inverseRateUSD" class="result-field" readonly>
             </div>
         </div>
     </div>
@@ -245,20 +259,32 @@
     </footer>
 
     <script>
-        // Calculate inverse rate when page loads
+        // Calculate inverse rates when page loads
         window.onload = function() {
-            // Show "Invalid Rate" when the page first loads
-            document.getElementById('inverseRate').value = "Invalid Rate";
+            // Calculate inverse rates using the default values
+            calculateInverseRateGBP();
+            calculateInverseRateUSD();
         };
 
-        function calculateInverseRate() {
-            const rate = parseFloat(document.getElementById('exchangeRate').value);
+        function calculateInverseRateGBP() {
+            const rate = parseFloat(document.getElementById('exchangeRateGBP').value);
             
             if (rate && rate > 0) {
                 const inverse = 1 / rate;
-                document.getElementById('inverseRate').value = inverse.toFixed(6);
+                document.getElementById('inverseRateGBP').value = inverse.toFixed(6);
             } else {
-                document.getElementById('inverseRate').value = "Invalid Rate";
+                document.getElementById('inverseRateGBP').value = "Invalid Rate";
+            }
+        }
+
+        function calculateInverseRateUSD() {
+            const rate = parseFloat(document.getElementById('exchangeRateUSD').value);
+            
+            if (rate && rate > 0) {
+                const inverse = 1 / rate;
+                document.getElementById('inverseRateUSD').value = inverse.toFixed(6);
+            } else {
+                document.getElementById('inverseRateUSD').value = "Invalid Rate";
             }
         }
     </script>
